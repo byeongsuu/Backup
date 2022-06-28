@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>overflow</title>
+
+  <style>
+    /* 
+      < overflow >
+
+    - 부모요소의 프레임 내에서 자식요소가 흘러 넘치는 경우에 대한 설정.
+
+    =======================================================================
+
+      < visible >
+
+    - 부모요소에 대하여 자식요소가 흘러 넘쳐도 보이는 그대로 표시.
+      overflow 속성 미설정 시의 디폴트 값.
+    */
+    p {
+      background-color: antiquewhite;
+      border: 1px solid;
+      height: 80px;
+      margin-bottom: 200px;
+
+      overflow: visible;
+    }
+
+    /* 
+      < hidden >
+
+    - 부모요소에 대하여 자식요소가 흘러 넘쳐 표시되는 부분을 숨김.
+    */
+    p:nth-of-type(2) {
+      overflow: hidden;
+    }
+
+    p:nth-of-type(2):hover {
+      overflow: visible;
+    }
+
+    p:nth-of-type(n+3) {
+      width: 300px;
+    }
+
+    /* 
+      < white-space : nowrap >
+
+    - 텍스트는 기본적으로 지정된 컨텐트 너비 영역에 둘러싸이는 특성(normal)으로 인해
+      오른쪽 끝 영역에 닿으면 자동으로 개행되는 특성을 가지는데, 이러한 너비를 둘러
+      싸는 디폴트 속성을 해제하는 값이 nowrap.
+
+    */
+    p:nth-of-type(3) {
+      white-space: nowrap;
+    }
+
+    /* 
+      < overflow-x : hidden >
+
+    - 부모요소에 대하여 자식요소가 수평으로 흘러 넘쳐 표시되는 부분을 숨김.
+    */
+    p:nth-of-type(3):hover {
+      overflow-x: hidden;
+    }
+
+    /* 
+      < overflow-y : hidden >
+
+    - 부모요소에 대하여 자식요소가 수직으로 흘러 넘쳐 표시되는 부분을 숨김.
+    */
+    p:nth-of-type(4):hover {
+      overflow-y: hidden;
+    }
+
+    /* 
+      < scroll >
+
+    - 자식 요소가 부모의 수평 또는 수직 영역을 벗어나 흘러 넘치는 경우,
+      흘러 넘치는 방향에 상관없이 수평과 수직 모두에 대하여 스크롤 바 생성.
+    */
+    p:nth-of-type(5) {
+      overflow-y: hidden;
+      overflow: scroll;
+    }
+
+    /* 
+      < auto >
+
+    - 자식 요소가 부모의 수평 또는 수직 영역을 벗어나 흘러 넘치는 경우,
+      흘러 넘치는 방향에 대해서만 스크롤 바 생성. ( ex : 약관 )
+    */
+    p:nth-of-type(5):hover {
+      overflow: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>overflow</h1>
+  <hr>
+
+  <h2>1 - visible</h2>
+  <P>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas fuga expedita? Tenetur ipsum, deserunt neque
+    quas voluptates ab exercitationem tempore atque a iusto dolores magni saepe, architecto explicabo ullam!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas fuga expedita? Tenetur ipsum, deserunt neque
+    quas voluptates ab exercitationem tempore atque a iusto dolores magni saepe, architecto explicabo ullam!
+  </P>
+
+  <h2>2 - hidden &amp; hover-visible</h2>
+  <P>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas fuga expedita? Tenetur ipsum, deserunt neque
+    quas voluptates ab exercitationem tempore atque a iusto dolores magni saepe, architecto explicabo ullam!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas fuga expedita? Tenetur ipsum, deserunt neque
+    quas voluptates ab exercitationem tempore atque a iusto dolores magni saepe, architecto explicabo ullam!
+  </P>
+
+  <h2>3 - white-space(nowrap) &amp; overflow-x(hidden)</h2>
+  <P>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas fuga expedita? Tenetur ipsum, deserunt neque
+    quas voluptates ab exercitationem tempore atque a iusto dolores magni saepe, architecto explicabo ullam!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas fuga expedita? Tenetur ipsum, deserunt neque
+    quas voluptates ab exercitationem tempore atque a iusto dolores magni saepe, architecto explicabo ullam!
+  </P>
+
+  <h2>4 - overflow-y(hidden)</h2>
+  <P>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas fuga expedita? Tenetur ipsum, deserunt neque
+    quas voluptates ab exercitationem tempore atque a iusto dolores magni saepe, architecto explicabo ullam!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas fuga expedita? Tenetur ipsum, deserunt neque
+    quas voluptates ab exercitationem tempore atque a iusto dolores magni saepe, architecto explicabo ullam!
+  </P>
+
+  <h2>5 - overflow(scroll, auto)</h2>
+  <P>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas fuga expedita? Tenetur ipsum, deserunt neque
+    quas voluptates ab exercitationem tempore atque a iusto dolores magni saepe, architecto explicabo ullam!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quas fuga expedita? Tenetur ipsum, deserunt neque
+    quas voluptates ab exercitationem tempore atque a iusto dolores magni saepe, architecto explicabo ullam!
+  </P>
+</body>
+
+</html>
