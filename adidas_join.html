@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        * strong {
+            color: red;
+        }
+
+        h1 {
+            text-align: center;
+            height: 180px;
+            line-height: 180px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        main div{
+            margin: 40px 0 40px 35vw;
+        }
+
+        footer div:not(div:last-child){
+            margin-left: 35vw;
+        }
+
+        main div label:first-child {
+            font-size: 22px;
+        }
+
+        main input[type=text] {
+            width: 500px;
+            height: 30px;
+            font-size: 20px;
+        }
+
+        footer div p:first-child {
+            font-size: 22px;
+        }
+
+        footer div p:nth-child(2) {
+            width: 500px;
+            height: 100px;
+            overflow: auto;
+            border: 1px solid black;
+        }
+
+        footer input[type=radio]{
+            margin: 10px 0;
+        }
+
+        footer div:last-child a{
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            border: 1px solid;
+            text-align: center;
+            line-height: 50px;
+            margin: 30px calc((100vw - 100px) / 2);
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+
+    <body>
+        <h1>아디클럽 가입하기</h1>
+        <h2>
+            <strong>*</strong>
+            표시 된 부분은 필수 입력항목입니다</h2>
+
+        <main>
+            <form action="">
+                <div>
+                    <label for="name">이름
+                        <strong>*</strong>
+                    </label>
+                    <br>
+                    <input type="text" id="name" name="name" placeholder="Your name">
+                </div>
+
+                <div>
+                    <label for="email">이메일(ID)
+                        <strong>*</strong>
+                    </label>
+                    <br>
+                    <input type="text" id="email" name="email" placeholder="test.gmail.com">
+                </div>
+
+                <div>
+                    <label for="pwd">비밀번호
+                        <strong>*</strong>
+                    </label>
+                    <br>
+                    <input type="text" id="pw" name="pwd">
+                </div>
+
+                <div>
+                    <label for="birth">생년월일</label>
+                    <br>
+                    <input type="text" placeholder="6자리">
+                    <br>
+                </div>
+            </form>
+        </main>
+
+        <footer>
+            <div>
+                <p>개인정보 수집 및 이용에 대한 안내</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia alias,
+                    magnam eos fuga nihil reprehenderit laudantium quisquam facere unde assumenda
+                    blanditiis asperiores natus pariatur minima quam ad aliquam provident qui. Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Mollitia alias, magnam eos
+                    fuga nihil reprehenderit laudantium quisquam facere unde assumenda blanditiis
+                    asperiores natus pariatur minima quam ad aliquam provident qui</p>
+            </div>
+            <div>
+                <input type="radio">
+                이용약관 동의
+                <strong>*</strong>
+            </div>
+
+            <div>
+                <input type="radio">
+                Email 수신동의
+            </div>
+
+            <div><a href="">회원가입</a>
+            </div>
+        </footer>
+    </body>
+</html>
