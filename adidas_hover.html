@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            color: black;
+            list-style: none;
+        }
+
+        body {
+            height: 2000px;
+            width: calc(100vw - scroll);
+        }
+
+        header {
+            height: 20vh;
+            overflow-y: hidden;
+        }
+
+        main {
+            height: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        header div,
+        header h1,
+        header h1 a,
+        header li,
+        header nav,
+        header nav ul,
+        main article div,
+        main aside,
+        main section li {
+            display: inline-block;
+        }
+
+        h1 {
+            width: 120px;
+            height: 120px;
+            margin: calc((20vh - 120px)/2) 30px;
+        }
+
+        h1 a {
+            width: 120px;
+            height: 120px;
+            background: url("./image/icon-adidas-logo.svg") no-repeat;
+            background-size: 100%;
+            text-indent: -9999em;
+        }
+
+        header div,
+        header nav {
+            margin-top: calc((120px + (20vh - 120px) / 2) - 21px);
+            vertical-align: top;
+        }
+
+        header nav {
+            width: calc(100% - 450px);
+            text-align: center;
+        }
+
+        header ul {
+            height: 100%;
+        }
+
+        header li {
+            font-weight: bold;
+            margin: 0 20px;
+            line-height: initial;
+        }
+
+        /* ===================================================================================== */
+        header li a:first-child:hover+a>div{
+           display: inline-block;
+        }
+
+        header li a:nth-child(2)>div{
+            margin: 50px 0 0 -300px;
+            display:none;
+            width: 1000px;
+            height: 350px;
+            background: url(./image/hover.png) no-repeat;
+            position: fixed;
+            border: 1px solid black;
+        }
+        /* ===================================================================================== */
+
+        header span {
+            margin: 0 10px;
+        }
+
+        main article {
+            background: url("./Image/gucci.jpg") no-repeat 100%/cover;
+            height: 60vh;
+            line-height: 60vh;
+        }
+
+        main div {
+            vertical-align: middle;
+        }
+
+        main article h2,
+        main article p {
+            color: white;
+            margin-left: 30px;
+            line-height: initial;
+        }
+
+        main article h2 {
+            font-weight: bolder;
+            font-size: 27px;
+        }
+
+        main article p {
+            word-break: keep-all;
+            font-size: 17px;
+        }
+
+        main article a {
+            display: block;
+            color: black;
+            width: 100px;
+            height: 50px;
+            background-color: white;
+            font-weight: bold;
+            text-align: center;
+            line-height: 50px;
+            margin: 20px 0 0 30px;
+        }
+
+        main section {
+            text-align: center;
+        }
+
+        main section div {
+            line-height: initial;
+        }
+
+        main section h3 {
+            line-height: 60px;
+            font-style: italic;
+            font-size: 30px;
+        }
+
+        main section h3,
+        main section p {
+            text-align: left;
+        }
+
+        main section p {
+            margin-left: 10px;
+        }
+
+        main section li {
+            margin: 10px;
+            height: 380px;
+            white-space: initial;
+        }
+
+        main section li nav {
+            width: 267px;
+            height: 300px;
+            vertical-align: top;
+            text-align: initial;
+        }
+
+        main section:nth-of-type(2) li nav div:nth-child(2) {
+            text-decoration: line-through;
+        }
+
+        main section:nth-of-type(2) li nav div:nth-child(3) {
+            color: red;
+        }
+
+        main section li:hover {
+            border: 1px solid black;
+            margin: 9px;
+        }
+
+        main section li:hover nav :first-child {
+            margin-top: 248px;
+        }
+        /* ==================================================================================== */
+        main section nav :nth-child(1) {
+            display: inline-block;
+            background-color: white;
+            width: 40px;
+            margin: 258px 227px 0 5px;
+        }
+
+        main section:first-of-type nav :nth-child(1) {
+            text-indent: -9999em;
+            background-color: initial;
+        }
+
+        main section nav :nth-child(2) {
+            display: inline-block;
+            background-color: white;
+            margin-left: 5px;
+        }
+
+        main section nav :nth-child(3) {
+            display: inline-block;
+            background-color: white;
+            margin-left: 5px;
+        }
+        /* ======================================================================== */
+        main section:first-of-type li:first-child nav {
+            background: url("./Image/ozwego.jpg") 70%/cover;
+        }
+
+        main section:first-of-type li:nth-child(2) nav {
+            background: url("./Image/adilet.jpg") 70%/cover;
+        }
+
+        main section:first-of-type li:nth-child(3) nav {
+            background: url("./Image/therunhood.jpg") 70%/cover;
+        }
+
+        main section:first-of-type li:nth-child(4) nav {
+            background: url("./Image/bag.jpg") 70%/cover;
+        }
+
+        main section:first-of-type li:nth-child(5) nav {
+            background: url("./Image/multijacket.jpg") 70%/cover;
+        }
+        /* ========================================================================== */
+        main section:nth-of-type(2) li:first-child nav {
+            background: url("./Image/ZX_8000.jpg") 70%/cover;
+        }
+
+        main section:nth-of-type(2) li:nth-child(2) nav {
+            background: url("./Image/Beige_HA6024_21_model.jpg") 70%/cover;
+        }
+
+        main section:nth-of-type(2) li:nth-child(3) nav {
+            background: url("./Image/White_GX3330_01_standard.jpg") 70%/cover;
+        }
+
+        main section:nth-of-type(2) li:nth-child(4) nav {
+            background: url("./Image/Grey_HC1982_21_model.jpg") 70%/cover;
+        }
+
+        main section:nth-of-type(2) li:nth-child(5) nav {
+            background: url("./Image/x_White_GZ3319_01_standard.jpg") 70%/cover;
+        }
+    </style>
+
+    <body>
+        <header>
+            <h1>
+                <a href="#">adidas</a>
+            </h1>
+ 
+            <nav>
+                <ul>
+                    <li>
+                        <a href="">MEN</a>
+                        <a href="">
+                            <div></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">WOMEN</a>
+                        <a href="">
+                            <div></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">KID</a>
+                        <a href="">
+                            <div></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">SPORT</a>
+                        <a href="">
+                            <div></div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div>
+                <span>
+                    <a href="./adidas_join.html">회원가입</a>
+                </span>
+                <span>
+                    <a href="">로그인</a>
+                </span>
+                <span>
+                    <a href="">계정찾기</a>
+                </span>
+            </div>
+        </header>
+
+        <main>
+            <article>
+                <div>
+                    <h2>
+                        GAZELLE, BUT MAKE IT GUCCI
+                    </h2>
+                    <p>
+                        아디다스와 구찌의 크리에이티브 코드를 하나로
+                        <br>결합한 새로운 시그니처 실루엣. 지금 만나보세요.
+                    </p>
+                    <a href="">구매하기→</a>
+                </div>
+            </article>
+
+            <section>
+                <aside>
+                    <h3>RAINY SEASON</h3>
+                    <p>이제부터 시작,장마철을 함께할 필수 아이템</p>
+                    <ul>
+                        <li a="">
+                            <nav>
+                                <div>-0%</div>
+                                <div></div>
+                                <div>89,000원</div>
+                            </nav>
+                            <div>오즈위고 샌들</div>
+                        </li>
+
+                        <li a="">
+                            <nav>
+                                <div>-0%</div>
+                                <div></div>
+                                <div>55,000원</div>
+                            </nav>
+                            <div>아딜렛 클로그</div>
+                        </li>
+
+                        <li a="">
+                            <nav>
+                                <div>-0%</div>
+                                <div></div>
+                                <div>79,000원</div>
+                            </nav>
+                            <div>오운더런 후드 러닝</div>
+                        </li>
+
+                        <li a="">
+                            <nav>
+                                <div>-0%</div>
+                                <div></div>
+                                <div>45,000원</div>
+                            </nav>
+                            <div>아디컬러 웨이스트 백</div>
+                        </li>
+
+                        <li a="">
+                            <nav>
+                                <div>-0%</div>
+                                <div></div>
+                                <div>119,000원</div>
+                            </nav>
+                            <div>테렉스 멀티 재킷</div>
+                        </li>
+                    </ul>
+                </aside>
+
+            </section>
+
+            <section>
+                <aside>
+                    <h3>LAST SIZE</h3>
+                    <p>품절 임박 라스트 사이즈를 할인된 가격으로 만나보세요</p>
+                    <ul>
+                        <li a="">
+                            <nav>
+                                <div>-20%</div>
+                                <div>159,000원</div>
+                                <div>127,200원</div>
+                            </nav>
+                            <div>ZX 8000 팔리</div>
+                        </li>
+
+                        <li a="">
+                            <nav>
+                                <div>-30%</div>
+                                <div>329,000원</div>
+                                <div>230,000원</div>
+                            </nav>
+                            <div>스텔라 우븐 봄버 재킷</div>
+                        </li>
+
+                        <li a="">
+                            <nav>
+                                <div>-20%</div>
+                                <div>139,000원</div>
+                                <div>111,200원</div>
+                            </nav>
+                            <div>오즈위고 셀록스</div>
+                        </li>
+
+                        <li a="">
+                            <nav>
+                                <div>-30%</div>
+                                <div>99,000원</div>
+                                <div>69,300원</div>
+                            </nav>
+                            <div>아디컬러 클래식 우븐 팬츠</div>
+                        </li>
+
+                        <li a="">
+                            <nav>
+                                <div>-20%</div>
+                                <div>55,000원</div>
+                                <div>44,000원</div>
+                            </nav>
+                            <div>디즈니 그랜드 코트</div>
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+
+        </main>
+
+        <footer></footer>
+    </body>
+</html>
