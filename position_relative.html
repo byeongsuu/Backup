@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>relative</title>
+
+  <link rel="stylesheet" href="CSS/main.css">
+</head>
+
+<style>
+   * {
+    margin: 0;
+  }
+
+.box {
+    display: inline-block;
+    width:100px;
+    height:100px;
+    background-color: yellow;
+    border: 1px solid red;
+    box-sizing: border-box;
+    text-align: center;
+    line-height:100px;
+
+    /* 
+        < relative >
+
+    - 옵셋 속성 미적용 시에는 static 포지션과 동일하되, 옵셋 속성 적용시에는
+      static 속성이 지정된 것과 동일하게 문맥 흐름에 따른 박스 영역을 그대로
+      차지하지만, 옵셋 설정에 따른 요소의 디스플레이 영역은 정상적인 문맥흐름과
+      관계없이 표시. 이때 옵셋 설정이된 relative 요소는 다른 static 요소 위에
+      붕떠있는 것처럼 표시.
+      옵셋의 기준은 relative 요소 자신의 본래 위치를 기준으로 옵셋되어 표시.
+
+
+    ※ position 속정 미적용시 디폴트 포지션은 static.
+
+    */
+
+    /* position:relative; */
+}
+
+.b1 {
+    /* left: 300px; */
+    /* top:50px; */
+}
+
+.b2 {
+    /* right: -300px; */
+    /* top:-50px; */
+}
+
+.b3 {
+    /* bottom:-100px; */
+    /* left:-50px; */
+}
+
+.b4 {
+    /* left:200px; */
+    /* bottom:300px; */
+}
+
+</style>
+
+<body>
+  <div class="box b1">box1</div>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi repellendus quod inventore eos enim, magnam dolorum! Maiores, veritatis ipsam. Debitis iusto dolorem ut sit ipsa alias soluta ipsum natus modi.
+  </p>
+  <div class="box b2">box2</div>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi repellendus quod inventore eos enim, magnam dolorum!
+    Maiores, veritatis ipsam. Debitis iusto dolorem ut sit ipsa alias soluta ipsum natus modi.
+  </p>
+  <div class="box b3">box3</div>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi repellendus quod inventore eos enim, magnam dolorum!
+    Maiores, veritatis ipsam. Debitis iusto dolorem ut sit ipsa alias soluta ipsum natus modi.
+  </p>
+  <div class="box b4">box4</div>
+</body>
+
+</html>

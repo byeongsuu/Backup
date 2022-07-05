@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>relative 의 컨테이닝 블럭(Containing block)</title>
+
+        <link rel="stylesheet" href="CSS/main.css">
+    </head>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .outer {
+            background-color: antiquewhite;
+            width: 500px;
+            height: 500px;
+            border: solid 1px;
+        }
+
+        .inner {
+            background-color: silver;
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+
+        }
+
+        .inner div {
+            background-color: aqua;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+
+            /* 
+        < relative 요소의 컨테이닝 블럭 >
+
+    1) 위치에 대한 컨테이닝 블럭
+    
+    - relative 요소 자신의 본래 위치가 항상 기준.
+
+    2) 크기에 대한 컨테이닝 블럭
+
+    - static 요소와 동일하게 무조건 가장 가까운 부모요소가
+      크기를 결정짓는 컨테이닝 블럭으로 인정.
+    */
+            /* position: relative; */
+        }
+
+        .child1 {
+            /* top:-50px; */
+        }
+
+        .child2 {
+            /* right: 50px; */
+        }
+
+        .child3 {
+            /* bottom:50px; */
+        }
+
+        /* ================================================================================ */
+
+        .child4 {
+            /* top:-50px; */
+        }
+
+        .child5 {
+            /* right: 50px; */
+        }
+
+        .child6 {
+            /* bottom:50px; */
+        }
+
+        .box2 div div {
+            /* width: 50%;
+    height: 50%; */
+        }
+    </style>
+
+    <body>
+        <h1>relative 의 컨테이닝 블럭(Containing block)</h1>
+        <hr>
+
+        <h2>relative 의 기준위치</h2>
+        <div class="outer box1">
+            <div class="inner">
+                <div class="child1">1</div>
+                <div class="child2">2</div>
+                <div class="child3">3</div>
+            </div>
+        </div>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis mollitia modi
+            eveniet, nihil repudiandae error sed tempore aliquam accusantium cupiditate
+            voluptatem sunt reiciendis veniam. Maiores temporibus similique distinctio
+            cupiditate nihil? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Debitis mollitia modi eveniet, nihil repudiandae error sed tempore aliquam
+            accusantium cupiditate voluptatem sunt reiciendis veniam. Maiores temporibus
+            similique distinctio cupiditate nihil? Lorem ipsum dolor sit amet consectetur,
+            adipisicing elit. Debitis mollitia modi eveniet, nihil repudiandae error sed
+            tempore aliquam accusantium cupiditate voluptatem sunt reiciendis veniam.
+            Maiores temporibus similique distinctio cupiditate nihil? Lorem ipsum dolor sit
+            amet consectetur, adipisicing elit. Debitis mollitia modi eveniet, nihil
+            repudiandae error sed tempore aliquam accusantium cupiditate voluptatem sunt
+            reiciendis veniam. Maiores temporibus similique distinctio cupiditate nihil?
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis mollitia modi
+            eveniet, nihil repudiandae error sed tempore aliquam accusantium cupiditate
+            voluptatem sunt reiciendis veniam. Maiores temporibus similique distinctio
+            cupiditate nihil? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Debitis mollitia modi eveniet, nihil repudiandae error sed tempore aliquam
+            accusantium cupiditate voluptatem sunt reiciendis veniam. Maiores temporibus
+            similique distinctio cupiditate nihil?
+        </p>
+
+        <h2>relative 의 크기</h2>
+        <div class="outer box2">
+            <div class="inner">
+                <div class="child4">4</div>
+                <div class="child5">5</div>
+                <div class="child6">6</div>
+            </div>
+        </div>
+
+    </body>
+
+</html>

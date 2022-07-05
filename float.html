@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float 의 특성</title>
+
+    <!-- <link rel="stylesheet" href="CSS/main.css"> -->
+</head>
+
+<!--
+    < float 속성의 특성 >
+
+- 부모 컨테이너의 왼쪽 또는 오른쪽에 float 속성이 지정된 요소를 배치하여 다른 인라인
+  요소가 float 요소를 둘러쌀 수 있도록 구현.  
+  float 속성을 가진 요소는 부모 요소(컨테이닝 블럭:Containing Block)의 컨텐트 영역에
+  포함되지는 않지만 요소가 시작되는 수평 위치에서의 디스플레이 영역(수평 영역의 좌/우)을
+  차지하는 특성을 가짐.
+  따라서 float 속성을 가진 요소의 수평 영역에 비 float 속성을 가진 다른 요소가 뒤따라
+  오면 일반적인 문맥 흐름에는 포함되지 않지만, 디스플레이 영역은 차지하여 비 float속성을
+  가진 다른 요소보다 디스플레이 영역에 대한 우선권을 가지며 float 속성이 적용된 요소들
+  간에는 그들만의 문맥 흐름을 유지하면서 비 float 요소가 float 요소가 차지하는 수평 영역
+  을 둘러싸는 특성.
+  즉, 부모 요소의 컨텐트 영역에는 포함되지 않아 일반적인 문맥 흐름에는 벗어나지만,
+  비 float 속성을 가진 다른 요소나 다른 float 속성을 지닌 요소와의 디스플레이 영역은 서로
+  자리를 차지하면서 연계되어 표시.
+  더불어 float 속성을 부여한 요소는 인라인블럭 요소의 특성을 지니게 되어 컨텐트 영역에
+  대한 너비와 높이 지정이 가능하며, 일반적인 문맥 흐름이 아닌 단순히 디스플레이 영역의
+  흐름에 따라 배치되어 태그간 공백이나 개행등에 영향을 받지 않아, 태그 코딩 방식에 관계
+  없이 요소간 연속적인 인접 표현이 가능.
+-->
+
+<style>
+    div{
+        background-color: antiquewhite;
+    }
+
+    .left,
+    .right{
+        background-color: aqua;
+    }
+
+    .none{
+        background-color: coral;
+    }
+
+    .size{
+        width: 150px;
+        height: 90px;
+    }
+
+    img{
+        width: 150px;
+        height: 100px;
+    }
+
+    p{
+        text-align: justify;
+        word-break: break-all;
+    }
+
+    .left{
+        float: left;
+    }
+
+    .right{
+        float: right;
+    }
+
+    img.left{
+        margin-right: 20px;
+    }
+
+    img.right{
+        margin-left: 20px;
+    }
+
+    .none{
+        /* width: 300px; */
+
+        width: 100px;
+    }
+
+</style>
+
+<body>
+    <h1>float 의 특성</h1>
+    <hr>
+
+    <!-- 
+        부모 영역 내에서 float 요소의 디스플레이 영역은 표시되지만 부모의 컨텐트 영역에
+        포함되지 않아 부모의 높이가 결정되지 않고 이에 따른 부모의 배경이 적용되지 않음.
+        따라서 부모 요소인 div 가 컨텐트 영역을 차지하지 않아 뒤따라 오는 비 float 속성을
+        가진 hr 요소가 그 자리로 자리를 차지하여 표시되되, float 요소가 디스플레이 영역은
+        차지하므로 float 요소의 남아있는 수평 영역에 표시.
+    -->
+    <h2>1. float - left</h2>
+    <div>
+        <span class="left">float-left</span>
+    </div>
+    <hr>
+
+    <h2>2. float - right</h2>
+    <div>
+        <span class="right">float-right</span>
+    </div>
+    <hr>
+
+    <!-- 
+        float 속성이 지정된 요소는 인라인 블럭 요소의 특성을 가지게 되어 너비와 높이 지정이
+        가능하며, 별도의 크기를 지정하지 않은 경우 컨텐트 크기로 요소의 크기가 결정.
+        또한, float 요소는 일반적인 문맥 흐름에 포함되지 않는 특성으로 인해 디스플레이 영역만
+        차지함으로써 코딩 상의 whitespace 문자에 영향을 받지않는 것을 확인 가능.
+    -->
+    <h2>3. float 의 크기 지정</h2>
+    <div>
+        <span class="left size">float-left</span>
+        <span class="none">float-none</span>
+        <span class="none">float-none</span>
+    </div>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+
+    <h2>4. float 의 연계</h2>
+    <div>
+        <span class="left">float-left</span>
+        <span class="left">float-left</span>
+        <span class="left">float-left</span>
+        <span class="right">float-right</span>
+    </div>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+
+    <h2>5. float 의 활용</h2>
+    <div>
+        <img class="left" src="../image/hallasan.jpg" alt="Hallasan">
+        <img class="right" src="../image/hallasan.jpg" alt="Baekdusan">
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis odio, enim maiores laborum dolorem et
+            repellat soluta ullam corrupti in esse harum nostrum voluptatem dolorum eos aliquid autem! Sed, magni!
+        </p>
+    </div>
+    <hr>
+
+    <h2>6. float 사용시 주의사항</h2>
+    <img class="left" src="../image/hallasan.jpg" alt="Hallasan">
+    <div class="none">
+        <h3>None float - Block Element</h3>
+    </div>
+</body>
+
+</html>

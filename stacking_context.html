@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>쌓임맥락(Stacking context)</title>
+
+  <link rel="stylesheet" href="CSS/main.css">
+</head>
+
+<style>
+    body{
+        margin: 30px;
+        padding:20px;
+        border: 2px dashed;
+    }
+
+    body>div{
+        background-color: blue;
+    }
+
+    div div{
+        font-size: 20pt;
+        padding: 5px;
+        border: 1px red solid;
+    }
+
+    .first{
+        background-color: yellow;
+    }
+
+    .second{
+        background-color: turquoise;
+        /* color: red; */
+    }
+
+    .third,
+    .second_child{
+        background-color: violet;
+        /* color: bisque; */
+    }
+
+    .case1 div{
+        margin-top: -10px;
+    }
+
+    .case2 .first{
+        position: relative;
+    }
+
+    .case2 .second{
+        position: relative;
+        top: -20px;
+    }
+
+    .case2 .third{
+        position: relative;
+        /* top: -40px; */
+    }
+
+    .case3 .first{
+        position: relative;
+        top: 10px;
+    }
+
+    .case3 .third{
+        position: relative;
+        top: -10px;
+    }
+
+    .case4 .first{
+        position: relative;
+        top: -20px;
+        z-index: 4;
+    }
+
+    .case4 .second{
+        position: relative;
+        top: -40px;
+        z-index: 3;
+    }
+
+    .case4 .third{
+        position: relative;
+        /* bottom: 50px; */
+        /* top: -40px; */
+        /* z-index: 1; */
+    }
+
+    .case5 .first{
+        position: relative;
+        bottom: -20px;
+        z-index: 3;
+    }
+
+    .case5 .second{
+        position: relative;
+        left: 30px;
+        z-index: 2;
+    }
+
+    .case5 .second_child{
+        position: relative;
+        top: -40px;
+        left: 30px;
+        z-index: 100;
+    }
+/* =================================================== */
+    .case6 .first{
+        position: relative;
+        bottom: -30px;
+        z-index: 3;
+    }
+
+    .case6 .second{
+        position: relative;
+        left: 20px;
+        z-index: 3;
+    }
+
+    .case6 .second_child{
+        position: relative;
+        top: -20px;
+        z-index: 2;
+    }
+ /* ======================================================== */
+    .case7 .first{
+        position: relative;
+        z-index: 3;
+    }
+
+    .case7 .second{
+        position: relative;
+        left: 20px;
+        top: -20px;
+        z-index: auto;
+    }
+
+    .case7 .second_child{
+        position: relative;
+        top: -40px;
+        right: -30px;
+        z-index: -1;
+    }
+
+</style>
+
+<body>
+  <h1>쌓임맥락(Stacking context)</h1>
+  <hr>
+
+  <h2>CASE 1</h2>
+  <div class="case1">
+    <div class="first">1 - 첫 번째 요소--------</div>
+    <div class="second">1 - 두 번째 요소-----</div>
+    <div class="third">1 - 세 번째 요소--</div>
+  </div>
+  <hr>
+
+  <h2>CASE 2</h2>
+  <div class="case2">
+    <div class="first">2 - 첫 번째 요소--------</div>
+    <div class="second">2 - 두 번째 요소-----</div>
+    <div class="third">2 - 세 번째 요소--</div>
+  </div>
+  <hr>
+
+  <h2>CASE 3</h2>
+  <div class="case3">
+    <div class="first">3 - 첫 번째 요소--------</div>
+    <div class="second">3 - 두 번째 요소-----</div>
+    <div class="third">3 - 세 번째 요소--</div>
+  </div>
+  <hr>
+
+  <h2>CASE 4</h2>
+  <div class="case4">
+    <div class="first">4 - 첫 번째 요소--------</div>
+    <div class="second">4 - 두 번째 요소-----</div>
+    <div class="third">4 - 세 번째 요소--</div>
+  </div>
+  <hr>
+
+  <h2>CASE 5</h2>
+  <div class="case5">
+    <div class="first">5 - 첫 번째 요소--------</div>
+    <div class="second">5 - 두 번째 요소-----
+      <div class="second_child">
+        5 - 두 번째의 자식요소--
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <h2>CASE 6</h2>
+  <div class="case6">
+    <div class="first">6 - 첫 번째 요소--------</div>
+    <div class="second">6 - 두 번째 요소-----
+      <div class="second_child">
+        6 - 두 번째의 자식요소--
+      </div>
+    </div>
+  </div>
+
+  <h2>CASE 7</h2>
+  <div class="case7">
+    <div class="first">7 - 첫 번째 요소--------</div>
+    <div class="second">7 - 두 번째 요소-----
+      <div class="second_child">
+        7 - 두 번째의 자식요소--
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

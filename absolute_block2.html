@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>부모의 기준이 결정되지 않은 absolute 요소의 컨테이닝 블럭</title>
+
+        <link rel="stylesheet" href="CSS/main.css">
+    </head>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .outer {
+            background-color: antiquewhite;
+            width: 500px;
+            height: 500px;
+            border: solid 1px;
+        }
+
+        .inner {
+            background-color: silver;
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+
+        }
+
+        .inner div {
+            background-color: aqua;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+
+            /* 
+        < absolute 요소의 컨테이닝 블럭이 되기 위한 자격 >
+
+    -  static 이 아닌 포지션 속성을 가진 가장 가까운 부모 또는 조상 요소.
+    */
+            position: absolute;
+
+        }
+
+        .child1 {
+            top: 0;
+        }
+
+        .child2 {
+            right: 0;
+        }
+
+        .child3 {
+            bottom: 0;
+        }
+
+        /* .inner div {
+            width: 20%;
+            height: 20%;
+        } */
+
+        .outer {
+            /* position: relative; */
+        }
+
+        .inner {
+            /* position: relative; */
+        }
+    </style>
+
+    <body>
+        <h1>부모의 기준이 결정되지 않은 absolute 요소의 컨테이닝 블럭</h1>
+        <hr>
+
+        <h2>absolute 의 기준위치</h2>
+        <div class="outer box1">
+            <div class="inner">
+                <div class="child1">1</div>
+                <div class="child2">2</div>
+                <div class="child3">3</div>
+            </div>
+        </div>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis mollitia modi
+            eveniet, nihil repudiandae error sed tempore aliquam accusantium cupiditate
+            voluptatem sunt reiciendis veniam. Maiores temporibus similique distinctio
+            cupiditate nihil? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Debitis mollitia modi eveniet, nihil repudiandae error sed tempore aliquam
+            accusantium cupiditate voluptatem sunt reiciendis veniam. Maiores temporibus
+            similique distinctio cupiditate nihil? Lorem ipsum dolor sit amet consectetur,
+            adipisicing elit. Debitis mollitia modi eveniet, nihil repudiandae error sed
+            tempore aliquam accusantium cupiditate voluptatem sunt reiciendis veniam.
+            Maiores temporibus similique distinctio cupiditate nihil? Lorem ipsum dolor sit
+            amet consectetur, adipisicing elit. Debitis mollitia modi eveniet, nihil
+            repudiandae error sed tempore aliquam accusantium cupiditate voluptatem sunt
+            reiciendis veniam. Maiores temporibus similique distinctio cupiditate nihil?
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis mollitia modi
+            eveniet, nihil repudiandae error sed tempore aliquam accusantium cupiditate
+            voluptatem sunt reiciendis veniam. Maiores temporibus similique distinctio
+            cupiditate nihil? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Debitis mollitia modi eveniet, nihil repudiandae error sed tempore aliquam
+            accusantium cupiditate voluptatem sunt reiciendis veniam. Maiores temporibus
+            similique distinctio cupiditate nihil?
+        </p>
+
+        <h2>absolute 의 크기</h2>
+        <div class="outer box2">
+            <div class="inner">
+                <div class="child4">4</div>
+                <div class="child5">5</div>
+                <div class="child6">6</div>
+            </div>
+        </div>
+
+    </body>
+
+</html>
