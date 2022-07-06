@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>포지션을 활용한 배경과 컨텐트에 대한 opacity 분리</title>
+
+  <!-- <link rel="stylesheet" href="CSS/main.css"> -->
+</head>
+
+<style>
+    .background{
+        background:url(../image/Beige_HA6024_21_model.jpg) no-repeat 0/300px 450px;
+        width: 300px;
+        height: 450px;
+        text-align: center;
+        line-height: 450px;
+        font-size: 100px;
+        color: darkorange;
+        display: inline-block;
+        opacity: 0.5;
+     }
+
+     .container{
+        position: absolute;
+     }
+
+     .absolute{
+        font-size: 100px;
+        color: darkorange;
+
+        position: absolute;
+        left: calc((100% - 100px)/2);
+        top: 50%;
+        transform: translateY(-50%);
+     }
+
+
+
+     /* .container{
+        display: inline-block;
+        margin-left: 10px;
+     } */
+
+</style>
+
+<body>
+  <h1>포지션을 활용한 배경과 컨텐트에 대한 opacity 분리</h1>
+  <hr>
+
+  <div class="background">
+    <span>봄</span>
+  </div>
+
+  <div class="container">
+    <div class="background"></div>
+    <span class="absolute">봄</span>
+  </div>
+
+</body>
+
+</html>
