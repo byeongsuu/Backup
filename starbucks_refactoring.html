@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>포지션을 활용한 시멘틱 섹셔닝</title>
+
+        <link rel="stylesheet" href="CSS/main.css">
+    </head>
+    <!-- < 문제 > - 화면구현 예시와 같이 기존 코드를 토대로 포지션을 적용하여 코드 리팩토링(Refactoring)을 하라. < 조건 >
+    1) section 과 article 에 마우스를 올리면 main 수평, 수직 중앙에 표시되도록 구현. 2) aside 에 마우스를 오버하면
+    main 의 오른쪽 바깥 경계에 표시되도록 구현. 3) header, main, footer 등의 비율은 동일하지만 너비나 전체 높이가 가변적인
+    경우를 대비하여 유지보수 편의성을 최대한 높일 수 있는 형태로 구현. -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        footer,
+        header,
+        main {
+            width: calc(1024px*.8);
+            margin: auto;
+            text-align: center;
+        }
+
+        footer,
+        header {
+            height: 20vh;
+        }
+
+        main {
+            height: 60vh;
+        }
+
+        /* ================================= */
+
+        header h1 {
+            background-color: antiquewhite;
+            line-height: 20vh;
+        }
+
+        /* =============================== */
+
+        #section_article {
+            width: 70%;
+        }
+
+        main aside {
+            width: 30%;
+            position: relative;
+            left: 70%;
+            top: -60vh;
+        }
+
+        #section_article section h2 {
+            background-color: silver;
+            line-height: calc(60vh * 0.6);
+        }
+
+        #section_article article h2 {
+            line-height: calc(60vh * 0.4);
+            background-color: darkcyan;
+        }
+
+        main aside h2 {
+            background-color: goldenrod;
+            line-height: 60vh;
+        }
+
+        /* ======================================*/
+
+        aside:hover h2 {
+            position: relative;
+            left: 100%;
+        }
+
+        section:hover h2 {
+            position: relative;
+            left: calc((100% / 0.7 * 0.3)/2);
+            z-index: 999;
+            top: calc((60vh - (60vh * 0.6))/2);
+        }
+
+        article:hover h2 {
+            position: relative;
+            left: calc((100% / 0.7 * 0.3)/2);
+            z-index: 999;
+            bottom: calc((60vh - (60vh * 0.4))/2);
+        }
+
+        /* ======================================== */
+        footer {
+            background-color: antiquewhite;
+            line-height: 20vh;
+        }
+    </style>
+
+    <body>
+        <header>
+            <h1>starbucks</h1>
+        </header>
+
+        <main>
+            <div id="section_article">
+                <section>
+                    <h2>news</h2>
+                </section>
+                <article>
+                    <h2>info</h2>
+                </article>
+            </div>
+
+            <aside>
+                <h2>login</h2>
+            </aside>
+        </main>
+
+        <footer>
+            <h3>contact us</h3>
+        </footer>
+    </body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fixed 의 컨테이닝 블럭(Containing block)</title>
+
+  <link rel="stylesheet" href="CSS/main.css">
+</head>
+
+<!-- 
+     < 컨테이닝 블럭(Containing block) >
+
+- 어떤 요소가 생성되는 위치나 크기에 영향을 주는 부모 또는 조상이되는 블럭 요소로써, 부모 요소의
+  컨텐트 영역이 컨테이닝 블럭으로 인식되는 것이 일반적이나 항상 그런것은 아니며 이는 자손 요소나
+  조상 요소의 포지션(position) 속성에 따라  컨테이닝 블럭이 되는  조상  요소가  어떤 요소가 될지
+  달라질 수 있음.
+  이러한 요건으로 인해 컨테이닝 블럭에 따라  자손 요소가 시작되는 경계 기준이
+  되는 조상 요소의 박스 영역이 달라질 수 있으며, 또한 컨테이닝 블럭에 따른 자손 요소의 크기 결정
+  요인으로 작용.
+  단, 자손 요소의 시작 경계가 되는 컨테이닝 블럭과 자손 요소의 크기를 결정하는 컨테이닝 블럭이
+  항상 같지는 않음에 주의.
+-->
+<style>
+
+ * {
+    margin: 0;
+    padding: 0;
+}
+
+.outer {
+    background-color: antiquewhite;
+    width: 500px;
+    height: 500px;
+    border: solid 1px;
+}
+
+.inner {
+    background-color: silver;
+    width: 300px;
+    height: 300px;
+    margin: 100px auto;
+    
+}
+
+.inner div {
+    background-color: aqua;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+
+    /* 
+        < fixed 요소의 컨테이닝 블럭 >
+
+    1) 위치에 대한 컨테이닝 블럭
+    
+    - 옵셋이 설정되지 않은 경우 : 무조건 가장 가까운 부모요소가 컨테이닝 블럭으로
+                                  기준이 되어 배치.
+
+    - 옵셋이 설정된 경우 : 옵셋이 설정되지 않은 상태에서의 최초 디스플레이 위치를
+                           기준으로 뷰포트가 컨테이닝 블럭이 되어 배치.
+
+       ※ 위치에 대한 컨테이닝 블럭은 스크롤바가 생성되지 않은 상태에서의 뷰포트
+          영역이 기준이 되므로, 스크롤바가 생성시에는 그 위치가 변경되거나 화면상에
+          보이지 않을 수 있음에 주의.
+
+    2) 크기에 대한 컨테이닝 블럭
+
+    - 옵셋 설정 여부와 관련없이 무조건 스크롤바를 제외한 뷰포트 영역이 컨테이닝
+      블럭으로 인정되어 결정.
+
+    */
+    /* position: fixed; */
+}
+
+/* .child1 {
+    top:0;
+}
+
+.child2 {
+    right: 0;
+}
+
+.child3 {
+    left: 0;
+} */
+
+/* ================================================================================ */
+
+/* .child4 {
+    bottom:0;
+}
+
+.child5 {
+    right: 0;
+}
+
+.child6 {
+    left: 0;
+} */
+
+/* 
+    fixed 요소의 크기는 무조건 스크롤바를 제외한
+    뷰포트 전체 크기를 기준으로 결정.
+*/
+/* .box2 div div {
+    width: 10%;
+    height: 10%;
+} */
+
+
+
+</style>
+
+<body>
+  <h1>fixed 의 컨테이닝 블럭(Containing block)</h1>
+  <hr>
+
+  <h2>fixed 의 기준위치</h2>
+  <div class="outer box1">
+    <div class="inner">
+      <div class="child1">1</div>
+      <div class="child2">2</div>
+      <div class="child3">3</div>
+    </div>
+  </div>
+
+  <p>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis mollitia modi eveniet, nihil repudiandae error sed
+    tempore aliquam accusantium cupiditate voluptatem sunt reiciendis veniam. Maiores temporibus similique distinctio
+    cupiditate nihil?
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis mollitia modi eveniet, nihil repudiandae error sed
+    tempore aliquam accusantium cupiditate voluptatem sunt reiciendis veniam. Maiores temporibus similique distinctio
+    cupiditate nihil?
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis mollitia modi eveniet, nihil repudiandae error sed
+    tempore aliquam accusantium cupiditate voluptatem sunt reiciendis veniam. Maiores temporibus similique distinctio
+    cupiditate nihil?
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis mollitia modi eveniet, nihil repudiandae error sed
+    tempore aliquam accusantium cupiditate voluptatem sunt reiciendis veniam. Maiores temporibus similique distinctio
+    cupiditate nihil?
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis mollitia modi eveniet, nihil repudiandae error sed
+    tempore aliquam accusantium cupiditate voluptatem sunt reiciendis veniam. Maiores temporibus similique distinctio
+    cupiditate nihil?
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis mollitia modi eveniet, nihil repudiandae error sed
+    tempore aliquam accusantium cupiditate voluptatem sunt reiciendis veniam. Maiores temporibus similique distinctio
+    cupiditate nihil?
+  </p>
+
+  <h2>fixed 의 크기</h2>
+  <div class="outer box2">
+    <div class="inner">
+      <div class="child4">4</div>
+      <div class="child5">5</div>
+      <div class="child6">6</div>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>absolute</title>
+
+  <link rel="stylesheet" href="CSS/main.css">
+</head>
+
+<style>
+* {
+   margin: 0;
+   padding: 0;
+}
+
+.box {
+   width: 100px;
+   height: 100px;
+   background-color: yellow;
+   border: 1px solid red;
+   box-sizing: border-box;
+   text-align: center;
+   line-height: 100px;
+
+   /* 
+        < absolute >
+
+    - fixed 와 동일하게 문맥에서의 영역을 차지하지 않아 부모요소에서 높이를
+      인지하지 못하고 인라인 블럭요소처럼 컨텐트 크기만큼만을 디스플레이 영역
+      으로 표시되며 최초 디스플레이 시작 지점을 기준으로 옵셋의 기준 시작 지점이
+      달라지는 등의 모든 포지션 특성이 동일.
+      하지만 뷰포트 영역을 기준으로 고정되는 것이 아닌, 기준이 되는 부모 요소를
+     기준으로 요소의 위치가 결정.
+
+    ※ 기준이 되는 부모 요소를 기준으로 그 위치가 결정되므로 스크롤바가 생성시에는
+      그 위치가 변경되거나 화면상에 보이지 않을 수 있음에 주의.
+    */
+
+   /* position: absolute; */
+}
+
+.b1 {
+   /* left: 0; */
+}
+
+.b2 {
+   /* right:0; */
+}
+
+.b3 {
+   /* bottom:0; */
+}
+
+.b4 {
+   /* right:0; */
+   /* bottom:0; */
+}
+
+body {
+   /* margin:10px; */
+}
+</style>
+
+<body>
+  <div class="box b1">box1</div>
+  <div class="box b2">box2</div>
+  <div class="box b3">box3</div>
+  <div class="box b4">box4</div>
+
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi incidunt, esse perferendis illo iste unde
+    consequuntur fugiat veniam cum earum quidem modi repellendus, quasi, non ratione impedit blanditiis illum architecto?
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi incidunt, esse perferendis illo iste unde
+    consequuntur fugiat veniam cum earum quidem modi repellendus, quasi, non ratione impedit blanditiis illum architecto?
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi incidunt, esse perferendis illo iste unde
+    consequuntur fugiat veniam cum earum quidem modi repellendus, quasi, non ratione impedit blanditiis illum architecto?
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi incidunt, esse perferendis illo iste unde
+    consequuntur fugiat veniam cum earum quidem modi repellendus, quasi, non ratione impedit blanditiis illum architecto?
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi incidunt, esse perferendis illo iste unde
+    consequuntur fugiat veniam cum earum quidem modi repellendus, quasi, non ratione impedit blanditiis illum architecto?
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi incidunt, esse perferendis illo iste unde
+    consequuntur fugiat veniam cum earum quidem modi repellendus, quasi, non ratione impedit blanditiis illum architecto?
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi incidunt, esse perferendis illo iste unde
+    consequuntur fugiat veniam cum earum quidem modi repellendus, quasi, non ratione impedit blanditiis illum architecto?
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi incidunt, esse perferendis illo iste unde
+    consequuntur fugiat veniam cum earum quidem modi repellendus, quasi, non ratione impedit blanditiis illum architecto?
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi incidunt, esse perferendis illo iste unde
+    consequuntur fugiat veniam cum earum quidem modi repellendus, quasi, non ratione impedit blanditiis illum architecto?
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi incidunt, esse perferendis illo iste unde
+    consequuntur fugiat veniam cum earum quidem modi repellendus, quasi, non ratione impedit blanditiis illum architecto?
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi incidunt, esse perferendis illo iste unde
+    consequuntur fugiat veniam cum earum quidem modi repellendus, quasi, non ratione impedit blanditiis illum architecto?
+  </p>
+</body>
+
+</html>
