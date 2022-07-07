@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+        <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사각형 삼각형태로 겹치기</title>
+
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+
+<!-- 
+  < 문제 >
+
+- 화면구현 예시와 같이 겹처진 사각형 박스를 화면 중앙에 배치되도록 하고
+  개별 사각형에 마우스 오버했을 때의 동작도 포함하여 구현하라.
+  ( HTML 문서는 본인이 직접 구성 )
+
+-->
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    body{
+        /* width: calc(100vw - (100vw - 100%)); */
+        width: 100%;
+        height: 100%;
+    }
+
+    .container{
+        height: 20vh;
+        width: 20vh;
+        top: calc(50% - 0.05 * 20vh); /* (100% - 1.9x)/2 + 0.9x */
+        left: calc((100% - 20vh)/2); 
+        position: fixed;
+    }
+
+    .box{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 20vh;
+        overflow:hidden;
+    }
+
+    .b1{
+        background-color: aqua;
+        position: absolute; 
+        z-index: 2;
+        bottom: 90%;
+    }
+
+    .b2{
+        background-color: cornflowerblue;
+        position: absolute;
+        z-index: 1;
+        right: 40%;
+    }
+
+    .b3{
+        background-color: darkgray;
+        position: absolute;
+        z-index: 3;
+        left: 40%;
+    }
+
+    .b1:hover{
+        z-index: 4;
+    }
+
+    .b2:hover{
+        z-index: 4;
+    }
+
+    .b3:hover{
+        z-index: 0;
+    }
+
+ 
+
+
+
+</style>
+
+<body>
+    <div class="container">
+        <div class="box b1">상단 사각형</div>
+        <div class="box b2">왼쪽 사각형</div>
+        <div class="box b3">오른쪽 사각형</div>
+    </div>
+
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium ut reprehenderit quaerat,
+        provident
+        voluptatem temporibus qui suscipit numquam quas amet eius nostrum necessitatibus quos? Labore cumque omnis fuga
+        sunt?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium ut reprehenderit quaerat,
+        provident
+        voluptatem temporibus qui suscipit numquam quas amet eius nostrum necessitatibus quos? Labore cumque omnis fuga
+        sunt?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium ut reprehenderit quaerat,
+        provident
+        voluptatem temporibus qui suscipit numquam quas amet eius nostrum necessitatibus quos? Labore cumque omnis fuga
+        sunt?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium ut reprehenderit quaerat,
+        provident
+        voluptatem temporibus qui suscipit numquam quas amet eius nostrum necessitatibus quos? Labore cumque omnis fuga
+        sunt?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium ut reprehenderit quaerat,
+        provident
+        voluptatem temporibus qui suscipit numquam quas amet eius nostrum necessitatibus quos? Labore cumque omnis fuga
+        sunt?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium ut reprehenderit quaerat,
+        provident
+        voluptatem temporibus qui suscipit numquam quas amet eius nostrum necessitatibus quos? Labore cumque omnis fuga
+        sunt?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium ut reprehenderit quaerat,
+        provident
+        voluptatem temporibus qui suscipit numquam quas amet eius nostrum necessitatibus quos? Labore cumque omnis fuga
+        sunt?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium ut reprehenderit quaerat,
+        provident
+        voluptatem temporibus qui suscipit numquam quas amet eius nostrum necessitatibus quos? Labore cumque omnis fuga
+        sunt?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium ut reprehenderit quaerat,
+        provident
+        voluptatem temporibus qui suscipit numquam quas amet eius nostrum necessitatibus quos? Labore cumque omnis fuga
+        sunt?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium ut reprehenderit quaerat,
+        provident
+        voluptatem temporibus qui suscipit numquam quas amet eius nostrum necessitatibus quos? Labore cumque omnis fuga
+        sunt?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium ut reprehenderit quaerat,
+        provident
+        voluptatem temporibus qui suscipit numquam quas amet eius nostrum necessitatibus quos? Labore cumque omnis fuga
+        sunt?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium ut reprehenderit quaerat,
+        provident
+        voluptatem temporibus qui suscipit numquam quas amet eius nostrum necessitatibus quos? Labore cumque omnis fuga
+        sunt?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium ut reprehenderit quaerat,
+        provident
+        voluptatem temporibus qui suscipit numquam quas amet eius nostrum necessitatibus quos? Labore cumque omnis fuga
+        sunt?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium ut reprehenderit quaerat,
+        provident
+        voluptatem temporibus qui suscipit numquam quas amet eius nostrum necessitatibus quos? Labore cumque omnis fuga
+        sunt?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium ut reprehenderit quaerat,
+        provident
+        voluptatem temporibus qui suscipit numquam quas amet eius nostrum necessitatibus quos? Labore cumque omnis fuga
+        sunt?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium ut reprehenderit quaerat,
+        provident
+        voluptatem temporibus qui suscipit numquam quas amet eius nostrum necessitatibus quos? Labore cumque omnis fuga
+        sunt?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium ut reprehenderit quaerat,
+        provident
+        voluptatem temporibus qui suscipit numquam quas amet eius nostrum necessitatibus quos? Labore cumque omnis fuga
+        sunt?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium ut reprehenderit quaerat,
+        provident
+        voluptatem temporibus qui suscipit numquam quas amet eius nostrum necessitatibus quos? Labore cumque omnis fuga
+        sunt?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium ut reprehenderit quaerat,
+        provident
+        voluptatem temporibus qui suscipit numquam quas amet eius nostrum necessitatibus quos? Labore cumque omnis fuga
+        sunt?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium ut reprehenderit quaerat,
+        provident
+        voluptatem temporibus qui suscipit numquam quas amet eius nostrum necessitatibus quos? Labore cumque omnis fuga
+        sunt?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium ut reprehenderit quaerat,
+        provident
+        voluptatem temporibus qui suscipit numquam quas amet eius nostrum necessitatibus quos? Labore cumque omnis fuga
+        sunt?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium ut reprehenderit quaerat,
+        provident
+        voluptatem temporibus qui suscipit numquam quas amet eius nostrum necessitatibus quos? Labore cumque omnis fuga
+        sunt?
+    </p>
+</body>
+
+</html>
+    </body>
+</html>
