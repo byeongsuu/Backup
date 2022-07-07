@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>align-content</title>
+
+        <link rel="stylesheet" href="CSS/main.css">
+    </head>
+
+    <style>
+        .item1 {
+            background-color: red;
+        }
+
+        .item2 {
+            background-color: blue;
+        }
+
+        .item3 {
+            background-color: green;
+        }
+
+        .flex div {
+            width: 90%;
+            color: white;
+        }
+
+        .flex {
+            width: 500px;
+            height: 200px;
+            border: 1px solid;
+
+            display: flex;
+            /* flex-wrap: wrap; */
+            align-items: start;
+
+            align-content: stretch;
+            align-content: flex-start;
+            align-content: flex-end;
+            /* align-content: center; */
+            /* align-content: space-between; */
+            /* align-content: space-around; */
+            /* align-content: space-evenly; */
+        }
+
+        /* align-items는 한 줄을 기준으로 정렬하는 반면, align-content는 두 줄부터 사용하는데 의미가 있다
+
+           그래서 align-content의 경우, 두 줄의 flex-wrap:wrap;인 상태에서 사용해야 한다.
+
+           만약 no-wrap이면 라인이 넘어가지 않아 계속 한 줄인 상태이기 때문에
+
+           align-content를 사용해도 적용이 되지 않는다. */
+    </style>
+
+    <body>
+        <h1>align-content</h1>
+        <hr>
+
+        <h2>align-content</h2>
+        <div class="flex">
+            <div class="item1">1</div>
+            <div class="item2">2</div>
+            <div class="item3">3</div>
+        </div>
+        <hr>
+    </body>
+
+</html>

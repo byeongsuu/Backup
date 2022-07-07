@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>width(height) 와 flex-basis 차이</title>
+
+        <link rel="stylesheet" href="CSS/main.css">
+    </head>
+
+    <style>
+        .flex {
+            width: 1000px;
+            height: 600px;
+            /* border:1px solid; */
+            background-color: antiquewhite;
+            margin-bottom: 20px;
+
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        img {
+            height: 200px;
+        }
+
+        .flex > * {
+            border: 1px solid;
+            box-sizing: border-box;
+        }
+
+        hr {
+            margin-bottom: 20px;
+        }
+
+        /* 
+        < flex-basis 와 width, height 의 차이 >
+
+- flex-basis 는 아이템에 대한 초기 크기를 지정할 뿐 컨텐트의 실제 크기에
+  가변적이고 주축의 방향에 따라 width 또는 height 로 변경될 수 있는 가변적인
+  특성.
+  따라서 flex-basis 는 좀 더 유연한 확장이 가능한 반면, width 와 height 는
+  크기에 대하여 강제적이면서 제한적인 특성.
+  즉, width 와 height 는 내부 컨텐트를 무조건 설정한 크기로 제한하고 주축에
+  대한 방향에 관계없이 항상 일관된 속성의 특성을 유지하는 반면,
+  flex-basis 는 지정한 크기 내로 내부 컨텐트가 포함되면 그 크기를 유지하지만,
+  지정한 크기를 벗어나도 그에 맞게 확장/축소되고 주축의 방향에 따라 width,
+  height 의 역할이 달라질 수 있는 특성.
+*/
+
+        /* =========================================================================== */
+        /* 1. 주축의 변경 */
+
+        /* 
+    기본적으로 width 로 정의된 이미지는 그 너비에 맞게 컨텐트가 축소되어 표시되는
+    것을 확인 가능한 반면, flex-basis 로 정의된 이미지는 지정한 크기에 관계없이
+    본래의 내부 컨텐트 이미지 크기에 맞추어 자동으로 확장되어 표시되는 것을 확인
+    가능.
+    또한, 주축의 방향을 column 으로 변경한 경우에도 width 로 정의된 이미지는
+    그대로 이미지의 너비로 표현이 되지만, flex-basis 로 정의된 이미지는 주축이
+    변경됨에 따라 너비가 높이로 변경되어 표현되는 것을 확인 가능.
+*/
+        .container1 .img1 {
+            width: 300px;
+        }
+
+        .container1 .img2 {
+            flex-basis: 300px;
+        }
+
+        .container1 {
+            /* flex-direction: column; */
+        }
+
+        /* =========================================================================== */
+        /* 2. 아이템 내 더 큰 내부 컨텐트 */
+
+        /* 
+    width 로 지정된 아이템의 크기 보다 내부 컨텐트(이미지)가 큰 경우에는 아이템의
+    너비는 고정된 상태에서 내부 컨텐트가 오버플로우 되는 것을 확인 가능.
+    반면, 동일한 상항에서 flex-baiss 로 지정된 경우에는 본래의 내부 컨텐트의 크기에
+    맞추어 아이템의 너비가 자동으로 확장되는 것을 확인 가능.
+*/
+        .container2 .item1 {
+            width: 300px;
+        }
+
+        .container2 .item2 {
+            flex-basis: 300px;
+        }
+    </style>
+
+    <body>
+        <h1>width(height) 와 flexbasis 차이</h1>
+        <hr>
+
+        <h2>1. 주축의 변경</h2>
+        <div class="flex container1">
+            <img class="img1" src="../image/jeep.png" alt="">
+            <img class="img2" src="../image/jeep.png" alt="">
+        </div>
+        <hr>
+
+        <h2>2. 아이템 내 더 큰 내부 컨텐트</h2>
+        <div class="flex container2">
+            <div class="item1">
+                <img src="../image/jeep.png" alt="">
+            </div>
+
+            <div class="item2">
+                <img src="../image/jeep.png" alt="">
+            </div>
+        </div>
+    </body>
+
+</html>

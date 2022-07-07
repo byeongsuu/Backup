@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>justify-content</title>
+
+  <link rel="stylesheet" href="CSS/main.css">
+</head>
+
+<style>
+    .item1{
+        background-color: red;
+    }
+
+    .item2{
+        background-color: blue;
+    }
+
+    .item3{
+        background-color: green;
+    }
+
+    .flex div{
+        width: 50px;
+        color: white;
+    }
+
+    .flex{
+        width: 500px;
+        height: 200px;
+        border: 1px solid;
+
+        display: flex;
+    }
+
+    .container1{
+        justify-content: flex-start;
+        justify-content: flex-end;
+        justify-content: center;
+        justify-content: space-between;
+        justify-content: space-around;
+        justify-content: space-evenly;
+    }
+
+    .container2 div{
+        width: 40%;
+    }
+
+    .container2{
+        flex-wrap: wrap;
+
+        justify-content: flex-start;
+        justify-content: flex-end;
+        /* justify-content: center; */
+        /* justify-content: space-around; */
+        /* justify-content: space-between; */
+        /* justify-content: space-evenly; */
+    }
+
+</style>
+
+<body>
+  <h1>justify-content</h1>
+  <hr>
+
+  <h2>justify-content - nowrap</h2>
+  <div class="flex container1">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+  </div>
+  <hr>
+
+  <h2>justify-content - wrap</h2>
+  <div class="flex container2">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+  </div>
+</body>
+
+</html>
