@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex-direction</title>
+
+  <link rel="stylesheet" href="CSS/main.css">
+</head>
+
+<!-- 
+  < Flexbox >
+
+- display 가 flex 로 설정된 부모요소 내의 자식항목들에 대하여 정렬과 공간 배분을
+  1차원적인 형태로 설계하기 위한 레이아웃 모델.
+  여기서 1차원 형태의 레이아웃이란 한번에 하나의 차원(행 또는 열) 형태로만 항목들의
+  레이아웃을 지정함을 의미.
+-->
+
+<style>
+ .item1 {
+    background-color:red;
+}
+
+.item2 {
+    background-color:blue;
+}
+
+.item3 {
+    background-color:green;
+}
+
+.flex div {
+    width: 50px;
+    color:white;
+}
+
+.flex {
+    width:500px;
+    height:200px;
+    border:1px solid;
+    
+    /* 
+        flexbox 는 display 속성을 flex 또는 inline-flex 로 지정 가능.
+        flex 는 블럭수준, inline-flex 는 인라인 블럭수준으로 flexbox 를 지정.
+    */
+    display: flex;
+    /* display: inline-flex; */
+}
+
+/* 
+    < flex-direction >
+
+- flexbox 내의 항목들에 대한 주축 방향으로의 배치를 결정짓는 속성.
+  flexbox 는 기본적으로 주축과 교차축으로 구성되는데 주축은 행(row) 또는
+  열(colume)로 지정 가능하며 교차축은 주축에 대응되는 행 또는 열을 의미.
+
+    < row >
+
+- flex-direction 속성의 디폴트 값으로 주축의 방향을 행방향으로 설정하면서
+  항목들에 대한 배치 방향을 인라인 방향으로 설정.
+
+※ 인라인 방향이라함은 한국어나 영어는 왼쪽에서 오른쪽 방향이 기본이지만
+   언어 별로 인라인 방향은 달라질 수 있음에 주의.
+   따라서 한국어나 영어의 인라인 방향에 대한 시작선은 왼쪽 끝이 되고,
+   끝 선은 오른쪽 끝으로 설정.
+
+    < row-reverse >
+
+- 주축의 방향을 row 와 같이 행방향으로 설정하되, 항목들에 대한 배치를
+  인라인 방향의 역방향부터 순서대로 배치.
+  즉, 인라인 방향에 대한 시작선과 끝 선의 위치가 서로 변경.
+*/
+.container1 {
+    flex-direction: row;
+    /* flex-direction: row-reverse; */
+}
+
+.container2 {
+    flex-direction: column;
+    /* flex-direction: column-reverse; */
+}
+
+</style>
+
+<body>
+  <h1>flex-direction</h1>
+  <hr>
+
+  <h2>flex-direction - row</h2>
+  <div class="flex container1">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+  </div>
+  <hr>
+
+  <h2>flex-direction - column</h2>
+  <div class="flex container2">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+  </div>
+</body>
+
+</html>

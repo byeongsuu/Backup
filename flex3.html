@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex-flow &amp; order</title>
+
+  <link rel="stylesheet" href="CSS/main.css">
+</head>
+
+<style>
+    .item1{
+        background-color: red;
+    }
+
+    .item2{
+        background-color: blue;
+    }
+
+    .item3{
+        background-color: green;
+    }
+
+    .flex div{
+        color: white;
+    }
+
+    .flex{
+        width: 500px;
+        height: 100px;
+        border: 1px solid;
+        display: flex;
+    }
+
+    .container1 div{
+        width: 100%;
+    }
+
+    .container1{
+        flex-flow: row wrap;
+    }
+
+    .container1:hover{
+        flex-flow: row wrap-reverse;
+    }
+
+    .container2 div{
+        height: 100%;
+    }
+
+    .container2{
+        flex-flow: column wrap-reverse;
+    }
+
+    .container2:hover .item2{
+        order: -1;
+    }
+
+</style>
+
+<body>
+  <h1>flex-flow &amp; order</h1>
+  <hr>
+
+  <h2>1. flex-flow</h2>
+  <div class="flex container1">
+    <div class="item1">Item1</div>
+    <div class="item2">Item2</div>
+    <div class="item3">Item3</div>
+  </div>
+  <hr>
+
+  <h2>2. order</h2>
+  <div class="flex container2">
+    <div class="item1">Item1</div>
+    <div class="item2">Item2</div>
+    <div class="item3">Item3</div>
+  </div>
+  <hr>
+</body>
+
+</html>

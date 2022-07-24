@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <style>
+        .item1{
+        background-color: red;
+    }
+
+    .item2{
+        background-color: blue;
+    }
+
+    .item3{
+        background-color: green;
+    }
+
+    .flex div{
+        color: black;
+    }
+
+    .flex{
+        width:500px;
+        height: 100px;
+        border: 1px solid;
+        display: flex;
+    }
+
+    .container1 div{
+        width: 100%;
+    }
+
+    .container1 div:not(:first-child){
+        height: 50px;
+    }
+
+    .container1:hover{
+        align-items: stretch;
+        align-items: flex-start;
+        align-items: flex-end;
+        align-items: center;
+        align-items: baseline;
+    }
+
+    .container2{
+        flex-direction: column;
+    }
+
+    .container2 div:not(:first-child){
+        width: 200px;
+    }
+
+    .container2:hover{
+        align-items: stretch;
+        /* align-items: flex-start; */
+        /* align-items: flex-end; */
+        /* align-items: center; */
+        /* align-items: baseline; */
+    }
+
+    .container3 div{
+        width: 100%;
+    }
+
+    .container3 div{
+        height: 50px;
+    }
+
+    .container3 .item2{
+        align-self: center;
+    }
+
+    .container3:hover .item1{
+        align-self: start;
+    }
+
+    .container4{
+        flex-direction: column;
+    }
+
+    .container4 div{
+        height: 100%;
+    }
+
+    .container4 div{
+        width: 50px;
+    }
+
+    .container4 .item2{
+        align-self: end;
+    }
+
+    .container4 .item3{
+        align-self: center;
+    }
+
+    .container4:hover .item2{
+        align-self: start;
+    }
+    
+    </style>
+
+    <body>
+        <h1>align-items &amp; align-self</h1>
+        <hr>
+      
+        <h2>1. align-items</h2>
+        <div class="flex container1">
+          <div class="item1">Item1</div>
+          <div class="item2">Item2</div>
+          <div class="item3">Item3</div>
+        </div>
+        <hr>
+      
+        <div class="flex container2">
+          <div class="item1">Item1</div>
+          <div class="item2">Item2</div>
+          <div class="item3">Item3</div>
+        </div>
+        <hr>
+      
+        <h2>2. align-self</h2>
+        <div class="flex container3">
+          <div class="item1">Item1</div>
+          <div class="item2">Item2</div>
+          <div class="item3">Item3</div>
+        </div>
+        <hr>
+        
+        <div class="flex container4">
+          <div class="item1">Item1</div>
+          <div class="item2">Item2</div>
+          <div class="item3">Item3</div>
+        </div>
+      
+    </body>
+</html>

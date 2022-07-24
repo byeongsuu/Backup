@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>포지션을 활용한 배경과 컨텐트에 대한 opacity 분리</title>
+
+  <!-- <link rel="stylesheet" href="CSS/main.css"> -->
+</head>
+
+<style>
+    .container{
+        display: flex;
+        height: 450px;
+    }
+
+    .background, .flexBox{
+        width: 300px;
+        font-size: 100px;
+        color: darkorange;
+    }
+
+    .background{
+        background: url(../image/adilet.jpg) no-repeat 0/300px 450px;
+        text-align: center;
+        line-height: 450px;
+        opacity: 0.3;
+
+        margin-right: 10px;
+    }
+
+    .flexBox{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: relative;
+    }
+
+    .flexBox::after{
+        content: "";
+        width: 100%;
+        height: 100%;
+        background:url(../image/adilet.jpg) no-repeat 0/300px 450px;
+        background-color: blue;
+        opacity: .3;
+
+        position: absolute;
+    }
+</style>
+
+<body>
+    <h1>flex, 가상요소 선택자, 포지션 활용 opacity 분리</h1>
+    <hr>
+  
+    <div class="container">
+      <div class="background">
+        <span>봄</span>
+      </div>
+  
+      <div class="flexBox">
+
+        <span>봄</span>
+
+      </div>
+    </div>
+  
+
+</body>
+
+</html>
