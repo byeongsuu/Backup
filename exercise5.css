@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body{
+    display: flex;
+    background-color: antiquewhite;
+}
+
+.logo_page{
+    margin: 20px;
+    width: 50%;
+}
+
+.service_container{
+    margin: 20px 20px 0 0;
+    width: 50%;
+}
+
+img{
+    display: block;
+    width: 100%;
+    height: 45vw;
+}
+
+.logo_page p{
+    margin-top: 20px;
+    width: 50vw;
+    font-size: 22px;
+   
+}
+
+.service_header{
+    background-color: darkslategrey;
+    color: white;
+    line-height: 40px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.service_body{
+    background-color: azure;
+    padding: 10px;
+}
+
+p:nth-child(2){
+    word-break: break-all;
+    text-align: justify;
+}
+
+.hidden .service_body{
+    display: none;
+}
