@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+}
+
+body {
+    width: 100vw;
+}
+
+.main_container {
+    height: 100vh;
+    /* display: inline-block;
+    position: relative;
+    overflow: hidden;
+    vertical-align: top; */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.slide_list {
+    display: flex;
+    position: relative;
+}
+
+.slide_list img {
+    width: 30vw;
+    height: 30vw;
+    display: block;
+}
+
+.slide_list li:not(:nth-child(3)) {
+    visibility: hidden; 
+}
+
+a {
+    position: absolute;
+    bottom: 45%;
+}
+
+.btn_back {
+    left: 36%;
+}
+
+.btn_foward {
+    right: 36%;
+}
